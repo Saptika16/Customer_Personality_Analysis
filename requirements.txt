@@ -2,7 +2,7 @@ streamlit==1.24.0
 pandas==1.4.4
 numpy==1.23.5
 seaborn==0.11.2
-matplotlib.pyplot
+matplotlib==3.5.2
 pickle
 sklearn==0.0.posts
 scikit-learn==1.0.2
