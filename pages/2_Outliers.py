@@ -7,7 +7,7 @@ Created on Tue Jul  4 17:13:15 2023
 import streamlit as st
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
+
 
 st.set_page_config(page_title='Clustering',layout='wide')
 df=pd.read_excel('marketing_campaign1.xlsx')

@@ -8,8 +8,8 @@ import streamlit as stm
 import pandas as pd
 
 
-#stm.set_page_config()
-stm.set_page_config(page_title='Clustering',layout='wide')
+#stm.set_page_config()stm.set_page_config(page_title='Clustering',layout='wide')
+
 stm.title('This is the Clustering project of team 6')
 stm.sidebar.success('Select Any page from here')
 stm.write(' 5 Clusters made by KMeans with 59.62% ')

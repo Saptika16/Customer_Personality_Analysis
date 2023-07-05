@@ -8,18 +8,8 @@ Created on Tue Jul  4 02:13:07 2023
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import numpy as np
-from datetime import date
-from datetime import datetime
-import plotly.express as px # for 3d model
-from sklearn.metrics import silhouette_score, adjusted_rand_score
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
 import streamlit as st
-import plotly.figure_factory as ff
 import pickle
-from yellowbrick.cluster import KElbowVisualizer
 
 st.set_page_config(page_title='Clustering',layout='wide')
 filename='trained_kmeans.sav'

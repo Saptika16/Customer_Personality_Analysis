@@ -7,11 +7,9 @@ Created on Sun Jul  2 01:06:48 2023
 
 from sklearn.preprocessing import StandardScaler 
 import pandas as pd
-import plotly.figure_factory as ff
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
-import numpy as np
 import pickle
 
 st.set_page_config(page_title='Clustering',layout='wide')
