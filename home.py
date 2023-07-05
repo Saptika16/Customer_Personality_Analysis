@@ -14,7 +14,7 @@ stm.title('This is the Clustering project of team 6')
 stm.sidebar.success('Select Any page from here')
 stm.write(' 5 Clusters made by KMeans with 59.62% ')
 stm.image('5cluster.png')
-df_with_cluster=pd.read_csv('df_with_cluster.csv').drop(['Unnamed: 0'],axis=1)
+df_with_cluster=pd.read_csv('df.csv')
 stm.write(df_with_cluster.groupby(['Cluster']).mean().sort_values(['Income'],ascending=False))
 
 stm.markdown('''# Cluster 3 :
