@@ -24,7 +24,7 @@ st.title("Prediction")
 with st.form("my_form"):
     age=st.number_input('age:')
     Years_Enrolled=st.number_input('Number of year enrolled')
-    Qualification=st.number_input('Qualification : (0-undergraduate or 1-graduate or 2-post graduate')
+    Qualification=st.number_input('Qualification : (0-undergraduate or 1-graduate or 2-post graduate)')
     family=st.number_input('family ? ( 0-no or 1-yes)')
     Income=st.number_input('Income:')
     Recency=st.number_input('Recency: ( 0-less than 49 days or 1-more than 49 days)')
