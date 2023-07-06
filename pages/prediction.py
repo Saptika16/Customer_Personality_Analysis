@@ -77,16 +77,21 @@ if submitted:
     #ahnged knn to loaded_model
     if (predicted[0]==0):
         a=' 1st Cluster '
+        b='Lowest economic Class'
     elif (predicted[0]==1):
         a=' 2nd Cluster'
+        b='Highest economic Class'
     elif (predicted[0]==2):
        a=' 3rd Cluster '
+       b='Lower Middle Class'
     elif (predicted[0]==3):
        a=' 4th Cluster'
+       b='Upper Middle Class'
     elif (predicted[0]==4):
        a=' 5th Cluster'
+       b='Low economical Class'
     
-    st.write('New data falls in ',a)
+    st.write('New data falls in ',a,'i.e.,',b)
     st.divider()
     cluster_df=df[df['Cluster']==predicted[0]]
     st.write('Other data from ',a)
@@ -101,11 +106,4 @@ if submitted:
     
   
     
-    
-    
-    
-    
-    
-    
-    
-    
+  
