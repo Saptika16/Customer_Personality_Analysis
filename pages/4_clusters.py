@@ -18,7 +18,20 @@ tab1, tab2,tab3 =stm.tabs(['Clusters 	:card_file_box:','Cluster Analysis :robot_
 
 
 with tab1:
-    stm.image('5cluster.png',width=700)
+    col1,col2=stm.columns([2,1])
+    col1.image('5cluster.png')
+    col2.markdown('''
+                  Cluster 0 = 1st cluster = Lowest economic Class
+                  
+                  Cluster 1 = 2nd cluster = Highest economic Class
+                  
+                  Cluster 2 = 3rd cluster = Lower Middle Class
+                  
+                  Cluster 3 = 4th cluster = Upper Middle Class
+                  
+                  Cluster 4 = 5th cluster = Low economical Class
+                  
+                  ''')
     #col1.image('cluster_scatter.png')
     stm.write(df_with_cluster.groupby(['Cluster']).mean().sort_values(['Income'],ascending=False))
 with tab2:
@@ -38,3 +51,15 @@ with tab3:
                  
                  * 1st cluster indicates people who are not so well to do
                  ''')
+    col2.markdown('''
+                  Cluster 0 = 1st cluster = Lowest economic Class
+                  
+                  Cluster 1 = 2nd cluster = Highest economic Class
+                  
+                  Cluster 2 = 3rd cluster = Lower Middle Class
+                  
+                  Cluster 3 = 4th cluster = Upper Middle Class
+                  
+                  Cluster 4 = 5th cluster = Low economical Class
+                  
+                  ''')                 

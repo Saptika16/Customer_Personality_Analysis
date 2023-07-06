@@ -17,6 +17,7 @@ filename='trained_model.sav'
 loaded_model=pickle.load(open(filename, 'rb'))
 loaded_pca=pickle.load(open('pca.pkl','rb'))
 df=pd.read_csv('df.csv')
+df_1=pd.read_csv('df_1.csv')
 st.set_option('deprecation.showPyplotGlobalUse',False)
 st.markdown('<style>body(bakground-color: Blue;}</style>',unsafe_allow_html=True)
 st.title("Prediction")
@@ -88,6 +89,8 @@ if submitted:
     st.write('New data falls in ',a)
     st.divider()
     cluster_df=df[df['Cluster']==predicted[0]]
+    st.write('Other data from ',a)
+    st.write(cluster_df.drop(['Cluster'],axis=1))
     #fig,ax=plt.subplots(nrows=6,ncols=3)
     for c in cluster_df.drop(['Cluster'],axis=1):
             fig,ax=plt.subplots()
