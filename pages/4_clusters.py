@@ -18,7 +18,7 @@ tab1, tab2,tab3 =stm.tabs(['Clusters 	:card_file_box:','Cluster Analysis :robot_
 
 
 with tab1:
-    col1,col2=stm.columns([2,1])
+    col1,col2=stm.columns([1,1])
     col1.image('5cluster.png')
     col2.markdown('''
                   Cluster 0 = 1st cluster = Lowest economic Class
