@@ -60,8 +60,8 @@ with st.form("my_form"):
     submitted=st.form_submit_button("Submit")
 if submitted:
     scaler = StandardScaler()
-    n=scaler.fit_transform(data)
-    n=loaded_pca.transform(n)
+    n_sc=scaler.fit_transform(data)
+    n=loaded_pca.transform(n_sc)
     #clust=loaded_model.predict(n)[0]
     #print('Data Belongs to cluster',clust)
     
