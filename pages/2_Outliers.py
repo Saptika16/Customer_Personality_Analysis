@@ -8,24 +8,23 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 
-
 st.set_page_config(page_title='Clustering',layout='wide')
+st.title('Outliers :round_pushpin:')
 df=pd.read_excel('marketing_campaign1.xlsx')
 st.set_option('deprecation.showPyplotGlobalUse',False)
-st.markdown('<style>body(bakground-color: Blue;}</style>',unsafe_allow_html=True)
-st.title("Outliers")
 
 
-tab1,tab2,tab3=st.tabs(['Income','Expenditure on Meat','Age'])
-tab1.subheader('Income')
-with st.container():
+column1, column2 ,column3= st.columns([1,1,1])
+
+
+with column1:
+    st.subheader('Income')
     sns.boxplot(df['Income'])
-    tab1.pyplot(figsize=(5,5))
-tab2.subheader('Expenditure on Meat')
-with st.container():
+    st.pyplot(figsize=(1,1))
+with column2:
+    st.subheader('Expenditure on Meat')
     sns.boxplot(df['MntMeatProducts'])
-    tab2.pyplot(figsize=(5,5))
-
-tab3.subheader('Age')
-with st.container():
-    tab3.image('age_boxplot.png')
+    st.pyplot(figsize=(5,5))
+with column3:
+    st.subheader('Age')
+    st.image('age_boxplot.png')

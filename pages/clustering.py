@@ -12,36 +12,43 @@ import streamlit as st
 import pickle
 
 st.set_page_config(page_title='Clustering',layout='wide')
+st.set_option('deprecation.showPyplotGlobalUse',False)
+st.title("Clusteing")
+
+
+
 filename='trained_kmeans.sav'
 loaded_model=pickle.load(open(filename, 'rb'))
 df=pd.read_excel('marketing_campaign1.xlsx')
 df_passed=pd.read_csv('passed_data.csv').drop(['Unnamed: 0'],axis=1)
 df_1=pd.read_csv('df_1.csv').drop(['Unnamed: 0'],axis=1)
 df_with_cluster=pd.read_csv('df_with_cluster.csv').drop(['Unnamed: 0'],axis=1)
-
-
-# Scree Plot
-
-with st.expander('Curve'):
-    curve=st.radio('Select to see:',['Scree','elbow','clusters count',
+column1, column2 = st.columns([1,2])
+with column1:
+    curve=st.selectbox('Select to plot to view:',['Cluster Scatter','clusters count','Data based on Clusters',
+                                                  'Scree','elbow',
                          'Expenditure~Income','Expenditure~Meat',
                          'Purchase Methods based on Clusters',
                         'Age based on clusters', 'Website Visit last month based on cluster',
-                       'family dynamics based on cluster', 'Discount per cluster',
-                      'Data based on Clusters' ])
-with st.container():
-    #column1, column2 = st.columns([2,2])
+                       'family dynamics based on cluster', 'Discount per cluster'
+                       ])
+    
+with column2:
+    #
     if curve=='Scree':
         #with column1:
            st.image('scree.png')
     elif curve=='elbow':
         #with column1:
             st.image('elbow.png')
+    elif curve=='Cluster Scatter':
+        st.image('cluster_scatter.png')
+        
     elif curve=='clusters count':
         #with column1:
             st.image('5cluster.png')
-        #with column1:
-            st.write('LOwest economic status people has highest in number')
+            with column1:
+               st.write('Lowest economic status people has highest in number')
     elif curve=='Expenditure~Income':
         #with column1:
              st.image('expenditure_Income.png')       
@@ -72,6 +79,3 @@ with st.container():
                 st.pyplot(figsize=(5,5))
             #st.image('cluster_facet.png')       
                    
-st.set_option('deprecation.showPyplotGlobalUse',False)
-st.markdown('<style>body(bakground-color: Blue;}</style>',unsafe_allow_html=True)
-st.title("Clusteing")

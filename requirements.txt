@@ -6,3 +6,4 @@ matplotlib==3.5.2
 pickle-mixin==1.0.2
 openpyxl
 scikit-learn==1.0.2
+prettytable==0.2.5
