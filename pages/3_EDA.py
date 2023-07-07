@@ -19,8 +19,12 @@ with column2:
     if eda=='Products':
         prod=st.selectbox('Product related EDA ',
                           ['Product Outliers','Expenditure~Products',
-                           'Expenditure~Income~Marital Status','Buying Capacity',
-                           'Total Expenditure'])
+                           'Expenditure~Income~Marital Status',
+                           'Total Expenditure',
+                           'Wine Purchase based on kids and education',
+                           'Wine Purchase based on teens and education',
+                           'Expenditure on sweet if there are kids',
+                           'Expenditure on sweet if there are teens'])
         col1,col2=st.columns([1,2])
         
         if prod== 'Expenditure~Products':
@@ -28,6 +32,31 @@ with column2:
                 st.image('expenditure_prod_all.png')
             with column1:
                 st.markdown('* We observed that customer is spending more on meat and wine')
+        elif prod=='Wine Purchase based on kids and education':
+            with col2:
+                st.image('wine_kid_education.png')
+            with column1:
+                st.markdown('graduated people are the only people who have kids still they are spending on wine')
+        elif prod=='Wine Purchase based on teens and education':
+             with col2:
+                 st.image('wine_teen_education.png')
+             with column1:
+                 st.markdown('more number of kids at home reduces the sweet buyers')
+                 
+        elif prod=='Expenditure on sweet if there are teens':
+             with col2:
+                 st.image('teen_sweet.png')
+             with column1:
+                 st.markdown('as teens at home increases buying sweet items reduces')
+
+                 
+        elif prod=='Expenditure on sweet if there are kids':
+             with col2:
+                 st.image('sweet_kid.png')
+             with column1:
+                 st.markdown('graduated people are the only people who have kids still they are spending on wine')
+                 
+               
         elif prod=='Product Outliers':
             with col2:
                 st.image('eda_exp_prod_outliers.png')
@@ -59,11 +88,6 @@ again they spent far too less on sweets
             with column1:
                 st.markdown('* We observed that customer is spending more on meat and wine')
     
-        elif prod=='Buying Capacity':
-            with col2:
-                st.image('eda_buying_capacity.png')
-            with column1:
-                st.markdown(''' ''')
         elif prod=='Total Expenditure':
             with col2:
                 st.image('eda_total_exp.png')
@@ -186,7 +210,7 @@ again they spent far too less on sweets
                              'economic status count','Income of each economic staus',
                              'complains made by people of different economic status',
                              'expenditure made by people of different economic status',
-                             ])
+                             'Buying Capacity'])
         if eco_st== 'Savings made by people of different economic status':
             with column2:
                 st.image('economic_savings_bar.png')
@@ -194,6 +218,12 @@ again they spent far too less on sweets
                 st.markdown('---')
                 st.image('economic_savings.png')
                 st.markdown('* upper middle saves the most')
+        elif prod=='Buying Capacity':
+            with col2:
+                st.image('eda_buying_capacity.png')
+            with column1:
+                st.markdown(''' ''')
+                
         elif eco_st=='economic status count':
             with column2:
                 st.image('economic_st_count.png')
@@ -231,7 +261,8 @@ again they spent far too less on sweets
                             ['Expenditure if there are kids in home',
                              'Expenditure if there are teens in home',
                              'Expenditure based on Marital Status',
-                             'Relation Status','Education','Expenditure based on degree'])
+                             'Relation Status','Education',
+                             'Expenditure based on degree','Enrollment based on age and marital status'])
         col1,col2=st.columns([2,1])
         with col2:
             st.write('       ')
@@ -249,6 +280,13 @@ again they spent far too less on sweets
                 st.markdown('---')
                 st.markdown('''* as teens increases expenditure decreases''')
                 st.image('eda_exp_teens_line.png')
+        elif family=='Enrollment based on age and marital status':
+            with col1:
+                st.image('mar_enr_age.png')
+            with column1:
+                st.markdown('''* Married people are mostly enrolled for 10 years as well as single people...most people are enrolled for 10 years''')
+       
+        
         elif family=='Expenditure based on Marital Status':
             with col1:
                 st.image('eda_exp_mar_st.png')
