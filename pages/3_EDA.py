@@ -25,40 +25,40 @@ with column2:
                            'Wine Purchase based on teens and education',
                            'Expenditure on sweet if there are kids',
                            'Expenditure on sweet if there are teens'])
-        col1,col2=st.columns([1,2])
+       # col1,col2=st.columns([2,1])
         
         if prod== 'Expenditure~Products':
-            with col2:
+            with column2:
                 st.image('expenditure_prod_all.png')
             with column1:
                 st.markdown('* We observed that customer is spending more on meat and wine')
         elif prod=='Wine Purchase based on kids and education':
-            with col2:
+            with column2:
                 st.image('wine_kid_education.png')
             with column1:
                 st.markdown('graduated people are the only people who have kids still they are spending on wine')
         elif prod=='Wine Purchase based on teens and education':
-             with col2:
+             with column2:
                  st.image('wine_teen_education.png')
              with column1:
                  st.markdown('more number of kids at home reduces the sweet buyers')
                  
         elif prod=='Expenditure on sweet if there are teens':
-             with col2:
+             with column2:
                  st.image('teen_sweet.png')
              with column1:
                  st.markdown('as teens at home increases buying sweet items reduces')
 
                  
         elif prod=='Expenditure on sweet if there are kids':
-             with col2:
+             with column2:
                  st.image('sweet_kid.png')
              with column1:
                  st.markdown('graduated people are the only people who have kids still they are spending on wine')
                  
                
         elif prod=='Product Outliers':
-            with col2:
+            with column2:
                 st.image('eda_exp_prod_outliers.png')
             with column1:
                 st.markdown('''# Inference:
@@ -83,13 +83,13 @@ again they spent far too less on sweets
 * Inference :
 * Customer spends more on wine''')
         elif prod=='Expenditure~Income~Marital Status':
-            with col2:
+            with column2:
                 st.image('eda_exp_prod_mar.png')
             with column1:
                 st.markdown('* We observed that customer is spending more on meat and wine')
     
         elif prod=='Total Expenditure':
-            with col2:
+            with column2:
                 st.image('eda_total_exp.png')
             with column1:
                 st.markdown('''* wine is the most spend on product and fruit is the least bought product ''')
@@ -218,8 +218,8 @@ again they spent far too less on sweets
                 st.markdown('---')
                 st.image('economic_savings.png')
                 st.markdown('* upper middle saves the most')
-        elif prod=='Buying Capacity':
-            with col2:
+        elif eco_st=='Buying Capacity':
+            with column2:
                 st.image('eda_buying_capacity.png')
             with column1:
                 st.markdown(''' ''')
