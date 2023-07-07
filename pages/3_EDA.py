@@ -110,7 +110,7 @@ again they spent far too less on sweets
             with column1:
                 st.markdown('---')
                 st.markdown('''* Young ones buy mostly from stores''')
-                st.image('eda_pur_place_camp.png')
+                
      
         elif purchase=='Total Purchases from different places':
             with column2:

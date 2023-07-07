@@ -11,7 +11,7 @@ import pandas as pd
 #stm.set_page_config()stm.set_page_config(page_title='Clustering',layout='wide')
 stm.set_page_config(page_title='clustering',layout='wide')
 df_with_cluster=pd.read_csv('df.csv')
-myTable=pd.read_csv('myTable.csv')
+myTable=pd.read_csv('myTable.csv').drop(['Unnamed: 0'],axis=1)
 stm.title('Cluster Analysis')
 stm.markdown('---')
 tab1, tab2,tab3 =stm.tabs(['Clusters 	:card_file_box:','Cluster Analysis :robot_face:','Conclusion :memo:'])
