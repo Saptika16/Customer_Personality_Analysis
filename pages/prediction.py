@@ -8,6 +8,7 @@ Created on Sun Jul  2 01:06:48 2023
 from sklearn.preprocessing import StandardScaler 
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib import rcParams
 import seaborn as sns
 import streamlit as st
 import pickle
@@ -99,6 +100,7 @@ if submitted:
     #fig,ax=plt.subplots(nrows=6,ncols=3)
     for c in cluster_df.drop(['Cluster'],axis=1):
             fig,ax=plt.subplots()
+            rcParams['figure.figsize'] = 11.7,8.27
             grid=sns.FacetGrid(cluster_df,col='Cluster')
             grid=grid.map(plt.hist,c)
             plt.show()
