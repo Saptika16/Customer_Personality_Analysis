@@ -19,7 +19,7 @@ column1, column2 ,column3= st.columns([1,1,1])
 
 with column1:
     st.subheader('Income')
-    #sns.set(rc={'figure.figsize':(11.7,8.27)})
+    sns.set(rc={'figure.figsize':(11.7,8.27)})
     sns.boxplot(df['Income'])
     st.pyplot(figsize=(14,5))
 with column2:
