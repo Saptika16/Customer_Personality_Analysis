@@ -20,11 +20,11 @@ column1, column2 ,column3= st.columns([1,1,1])
 with column1:
     st.subheader('Income')
     sns.boxplot(df['Income'])
-    st.pyplot()
+    st.pyplot(figsize=(1,2))
 with column2:
     st.subheader('Expenditure on Meat')
     sns.boxplot(df['MntMeatProducts'])
-    st.pyplot()
+    st.pyplot(figsize=(1,2))
 with column3:
     st.subheader('Age')
     st.image('age_boxplot.png')
