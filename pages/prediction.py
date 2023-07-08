@@ -97,15 +97,19 @@ if submitted:
     cluster_df=df[df['Cluster']==predicted[0]]
     st.write('Other data from ',a)
     st.write(cluster_df.drop(['Cluster'],axis=1))
+    col1,col2=st.columns([2,1])
     #fig,ax=plt.subplots(nrows=6,ncols=3)
-    for c in cluster_df.drop(['Cluster'],axis=1):
-            fig,ax=plt.subplots()
-            rcParams['figure.figsize'] = 11.7,8.27
-            grid=sns.FacetGrid(cluster_df,col='Cluster')
-            grid=grid.map(plt.hist,c)
-            plt.show()
-            st.pyplot(figsize=(5,2))                  
-    
-  
+    with col2:
+        
+        for c in cluster_df.drop(['Cluster'],axis=1):
+                rcParams['figure.figsize'] = 2,1
+                fig,ax=plt.subplots(figsize=(2,1))
+                
+                grid=sns.FacetGrid(cluster_df,col='Cluster')
+                grid=grid.map(plt.hist,c)
+                plt.show()
+                st.pyplot(figsize=(5,2))                  
+        
+      
     
   
